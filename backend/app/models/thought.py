@@ -12,7 +12,7 @@ class Thought(SQLModel, table=True):
     title: str = Field(index=True)
     thought: str = Field()
     media_url: Optional[str] = None
-    sockets: List[str] = Field(default=[], sa_column=Column(JSON))
+    pns: List[str] = Field(default=[], sa_column=Column(JSON))
     created_at: datetime = Field(default=datetime.utcnow())
     updated_at: datetime = Field(default=datetime.utcnow())
 

@@ -12,7 +12,7 @@ class Talk(SQLModel, table=True):
     subject: str = Field(index=True)
     talk: str = Field()
     media_url: Optional[str] = None
-    sockets: List[str] = Field(default=[], sa_column=Column(JSON))
+    pns: List[str] = Field(default=[], sa_column=Column(JSON))
     created_at: datetime = Field(default=datetime.utcnow())
     updated_at: datetime = Field(default=datetime.utcnow())
 
