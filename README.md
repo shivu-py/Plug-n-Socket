@@ -1,6 +1,6 @@
 # We will use this readme to communicate here about the ideas/plans, and changes we make
 
-##ToDo:
+## ToDo:
 - write JWT logic
 - design and build Register/Login API's
 
