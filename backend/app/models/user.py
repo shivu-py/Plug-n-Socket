@@ -5,7 +5,6 @@ from typing import Optional, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .talk import Talk
-    from .thought import Thought
 
 class User(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -16,5 +15,4 @@ class User(SQLModel, table=True):
     created_at: datetime = Field(default=datetime.utcnow())
     updated_at: datetime = Field(default=datetime.utcnow())
     
-    thoughts: List["Thought"] = Relationship(back_populates="user")
     talks: List["Talk"] = Relationship(back_populates="user")
