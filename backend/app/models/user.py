@@ -5,6 +5,8 @@ from typing import Optional, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .talk import Talk
+    from .response import Response
+
 
 class User(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -16,3 +18,4 @@ class User(SQLModel, table=True):
     updated_at: datetime = Field(default=datetime.utcnow())
     
     talks: List["Talk"] = Relationship(back_populates="user")
+    responses: List["Response"] = Relationship(back_populates="user")

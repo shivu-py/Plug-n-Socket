@@ -7,12 +7,15 @@ class TalkBase(BaseModel):
     user_id: int
     subject: str
     media_url: Optional[str] = None
-    sockets: List[str] = []
+    pulg_n_socket: List[str] = []
+    lables: List[str] = []
 
 
 class TalkCreate(TalkBase):
-    pass
-
+    subject: str
+    media_url: Optional[str]
+    pulg_n_socket: List[str] = []
+    lables: List[str] = []
 
 class TalkUpdate(TalkBase):
     pass
