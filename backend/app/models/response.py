@@ -7,7 +7,7 @@ if TYPE_CHECKING:
     from .user import User
 
 class Response(SQLModel,table=True):
-    id: Optional[int] = Field()
+    id: Optional[int] = Field(default=None, primary_key=True)
     content: str = Field()
     talk_id: int = Field(foreign_key="talk.id")
     user_id: int = Field(foreign_key="user.id")
