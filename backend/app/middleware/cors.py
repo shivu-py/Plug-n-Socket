@@ -1,6 +1,5 @@
-from backend.app.main import app
 from fastapi.middleware.cors import CORSMiddleware
-from core.config import settings
+from app.core.config import settings
 
 def setup_cors(app):
     origins = [

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from sqlalchemy import text
-from db.session import async_session_maker
+from app.db.session import async_session_maker
 
 router = APIRouter(tags=["health"])
 

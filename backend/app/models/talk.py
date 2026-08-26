@@ -1,22 +1,24 @@
+import uuid
+from uuid import UUID
 from sqlmodel import SQLModel, Field, Relationship, Column, JSON
 from datetime import datetime
 from typing import Optional, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .user import User
-    from .response import Response
 
 
 class Talk(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    user_id: int = Field(foreign_key="user.id")
-    subject: str = Field(index=True)
-    talk: str = Field()
+    post_id: str = Field(default_factory=lambda: uuid.uuid4().hex, primary_key=True)
+    user_id: UUID = Field(foreign_key="user.user_id", index=True)
+    username: str = Field(index=True)
+    parent_post_id: Optional[str] = Field(default=None, foreign_key="talk.post_id", index=True)
+    content_type: str = Field(index=True)
+    content: Optional[str] = None
+    caption: Optional[str] = None
     media_url: Optional[str] = None
-    pulg_n_socket: List[str] = Field(default=[], sa_column=Column(JSON))
-    labels: List[str] = Field(default=[], sa_column=Column(JSON))
-    created_at: datetime = Field(default=datetime.utcnow())
-    updated_at: datetime = Field(default=datetime.utcnow())
+    post_type: Optional[str] = Field(default=None, index=True)
+    posted_date: datetime = Field(default_factory=datetime.utcnow)
+    interests: List[str] = Field(default=[], sa_column=Column(JSON))
 
     user: Optional["User"] = Relationship(back_populates="talks")
-    responses: List["Response"] = Relationship(back_populates="talk")
