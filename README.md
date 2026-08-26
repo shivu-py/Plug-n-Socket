@@ -7,7 +7,7 @@
 - Add the User profiling section
 - Add the Feed section GET method to load the recent posts
 - Adding the ranking algorithm to show user interest 80% and rest 20% random posts
-- Interacting with the random will also involve in calculating the ranking of interest to be shown to user
+- Interacting with the random post will also involve in calculating the ranking of interest to be shown to user
 
 ## Done:
 - I have removed the "Thought" model as we discussed yesterday, we will first do the "Talks" part then we will see what else we can add
