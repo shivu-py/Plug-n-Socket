@@ -3,9 +3,9 @@
 ## QUERIES:
 - Questions to be asked under this section
    
-## ToDo:
+## ToDo (PRIORITY WISE):
+- Add the User profiling section
 - Add the Feed section GET method to load the recent posts
-- Add the comment section both POST and GET method
 
 ## Done:
 - I have removed the "Thought" model as we discussed yesterday, we will first do the "Talks" part then we will see what else we can add
