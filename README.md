@@ -11,3 +11,20 @@
 - I have removed the "Thought" model as we discussed yesterday, we will first do the "Talks" part then we will see what else we can add
 - Added the Authentication of Register/Login with the JWT session token with the token expire time of 60 Min
 - Added the User Post and the Sub post (POST method) having the endpoint **/new_post** and **/sub_post**
+
+## Method Working:
+- **new_post** requires formdata -
+   - content_type -> Image , Video , Text 
+   - post_type -> main
+   - content -> "Why Chernobyl Happened ?"
+   - caption -> "they no proper work , reactor kaboom. All vaporise like bomboclaat"
+   - mediafile -> Image File or Video File (limited extensions only) (OPTIONAL)
+   - parent_post_id -> must be empty
+
+- **sub_post** requires formdata -
+   - content_type -> Image , Video , Text 
+   - post_type -> must be subpost or reply
+   - content -> "Chernobyl Kaboom how killed ?"
+   - caption -> "again they no proper work , reactor kaboom. All vaporise like bomboclaat"
+   - mediafile -> Image File or Video File (limited extensions only) (OPTIONAL)
+   - parent_post_id -> Important
