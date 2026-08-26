@@ -5,6 +5,7 @@
    
 ## ToDo (PRIORITY WISE):
 - Add the User profiling section
+- Add the refresh token of the JWT
 - Add the Feed section GET method to load the recent posts
 - Adding the ranking algorithm to show user interest 80% and rest 20% random posts
 - Interacting with the random post will also involve in calculating the ranking of interest to be shown to user
