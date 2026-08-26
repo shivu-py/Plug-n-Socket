@@ -3,14 +3,18 @@ from fastapi import FastAPI
 from sqlalchemy import text
 from sqlmodel import SQLModel
 
-from app.core.config import settings
+from app.core.config import settings, MEDIA_POSTS_DIR
 from app.db.session import engine
 from app.middleware.cors import setup_cors
 from app.routes.auth import router as auth_router
 from app.routes.health import router as health_router
-    
+from app.routes.userPost import router as posts_router
+from app.routes.subPost import router as sub_post_router
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    MEDIA_POSTS_DIR.mkdir(parents=True, exist_ok=True)
     try:
         async with engine.begin() as conn:
             await conn.execute(text("SELECT 1"))
@@ -33,3 +37,5 @@ app = FastAPI(
 setup_cors(app)
 app.include_router(health_router, prefix="/api")
 app.include_router(auth_router, prefix="/api")
+app.include_router(posts_router, prefix="/api")
+app.include_router(sub_post_router, prefix="/api")
