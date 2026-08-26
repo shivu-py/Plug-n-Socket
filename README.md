@@ -14,7 +14,7 @@
 - Added the Authentication of Register/Login with the JWT session token with the token expire time of 60 Min
 - Added the User Post and the Sub post (POST method) having the endpoint **/new_post** and **/sub_post**
 
-## Method Working:
+## Endpoint Working:
 - **new_post** requires formdata -
    - content_type -> Image , Video , Text 
    - post_type -> main
